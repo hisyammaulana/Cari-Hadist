@@ -33,6 +33,7 @@ export const ListBooks = () => {
           {book.map((books) => {
             return (
               <Book
+                key={books.id}
                 id={books.id}
                 name={books.name}
                 total={books.available}

@@ -11,13 +11,14 @@ export const SpesificComponent = ({ prw }) => {
     const data = await axios(`${BaseUrl}/books/${prw}/${no}`).then(
       (res) => res.data.data
     );
-    // setHadist(data);
-    console.log(data);
+    // setHadist(data)
+    setHadist(data);
   };
 
   useEffect(() => {
-    getHadist();
-  }, []);
+    console.log(hadist.length);
+  });
+
   return (
     <>
       <div className="container mx-auto flex flex-wrap">
@@ -47,7 +48,23 @@ export const SpesificComponent = ({ prw }) => {
         </div>
       </div>
       {/* card */}
-      {/* {hadist === null ? "" : (<CardSpesific hadist={hadist.name} terjemahan={hadist.name}/>)} */}
+      {/* {hadist === null ? (
+        <CardSpesific
+          showCard="none"
+          hr={hadist.name}
+          hadist={hadist && hadist.contents && hadist.contents.arab}
+          terjemahan={hadist && hadist.contents && hadist.contents.id}
+          num={hadist && hadist.contents && hadist.contents.number}
+        />
+      ) : (
+        <CardSpesific
+          showCard=""
+          hr={hadist.name}
+          hadist={hadist && hadist.contents && hadist.contents.arab}
+          terjemahan={hadist && hadist.contents && hadist.contents.id}
+          num={hadist && hadist.contents && hadist.contents.number}
+        />
+      )} */}
     </>
   );
 };

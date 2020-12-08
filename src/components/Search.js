@@ -43,7 +43,7 @@ export const Search = (props) => {
           </div>
         </div>
         {/* card search */}
-        {spesific ? <SpesificComponent prw={perawi} /> : <MoreComponent />}
+        {spesific ? <SpesificComponent prw={perawi} /> : <MoreComponent prw={perawi} />}
       </div>
     </section>
   );
